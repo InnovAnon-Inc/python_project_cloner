@@ -21,6 +21,7 @@ RUN pip install --no-cache-dir \
     build                      \
     cython                     \
     fastapi                    \
+    httpx                      \
     python-multipart           \
     setuptools                 \
     uvicorn
