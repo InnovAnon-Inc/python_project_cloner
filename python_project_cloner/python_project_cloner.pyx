@@ -13,7 +13,7 @@ app = FastAPI(title="Chimera Project Cloner")
 
 # Configuration - should be moved to env vars
 SHARED_VOLUME = Path("/mnt/shared_source")
-DEBIANIZER_URL = os.getenv("DEBIANIZER_URL", "http://python_project_debianizer:9322/debianize")
+DEBIANIZER_URL = os.getenv("DEBIANIZER_URL", "http://python_project_debianizer.innovanon.com:9322/debianize")
 
 class CloneRequest(BaseModel):
     repo_url: str
