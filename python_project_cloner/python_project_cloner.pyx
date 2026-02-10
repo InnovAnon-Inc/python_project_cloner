@@ -32,7 +32,8 @@ async def orchestrate_build(repo_path: Path):
 
             # 2. Trigger the Debianizer
             print(f"📦 Notifying Debianizer for {repo_path.name}...")
-            response = await client.post(DEBIANIZER_URL, json={"path": str(repo_path)})
+            headers = {"Content-Type": "application/json", "Accept": "application/json"}
+            response = await client.post(DEBIANIZER_URL, json={"path": str(repo_path)}, headers=headers)
             response.raise_for_status()
             
             # 3. Next step: The PPA Pusher
