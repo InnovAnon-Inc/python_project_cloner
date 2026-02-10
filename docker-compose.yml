@@ -1,0 +1,22 @@
+services:
+
+  python_project_cloner: # handles -march= / -mtune= architecture-specific distribution
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: python_project_cloner
+    restart: unless-stopped
+    hostname: python_project_cloner.innovanon.com
+    environment:
+      - VIRTUAL_HOST=python_project_cloner.innovanon.com
+      - VIRTUAL_PORT=9323
+#      - PROFILE_DIR=/var/lib/chimera/profiles
+    volumes:
+      - python_project_cloner-repos:/mnt/shared
+#    depends_on:
+#      - ssl-companion
+
+volumes:
+  python_project_cloner-repos
+
+
