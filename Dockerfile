@@ -40,4 +40,5 @@ RUN pip install --no-cache-dir .
 #RUN pip install --no-cache-dir *.whl \
 #&&  rm -v *.whl
 
-ENTRYPOINT ["python", "-u", "-m", "python_project_cloner"]
+#ENTRYPOINT ["python", "-u", "-m", "python_project_cloner"]
+ENTRYPOINT ["uvicorn", "python_project_cloner.python_project_cloner:app", "--host", "0.0.0.0", "--port", "9323"]
