@@ -12,7 +12,7 @@ import httpx
 app = FastAPI(title="Chimera Project Cloner")
 
 # Configuration
-SHARED_VOLUME = Path("/mnt/shared")
+SHARED_VOLUME = Path("/mnt/shared_source")
 DEBIANIZER_URL = os.getenv("DEBIANIZER_URL", "http://python_project_debianizer:9322/debianize")
 
 class CloneRequest(BaseModel):
